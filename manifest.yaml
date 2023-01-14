@@ -1,2 +1,2 @@
 
-include: manifests/fedora-coreos.yaml
+include: fedora-coreos-config/ignition-and-ostree.yaml
