@@ -1,2 +1,47 @@
 
-include: fedora-coreos-config/ignition-and-ostree.yaml
+
+releasever: 1
+
+ref: fedora/${releasever}/coreos
+
+include: fedora-coreos-config/manifests/ignition-and-ostree.yaml
+
+install-langs:
+  - en_GB
+  - en_US
+
+repos:
+  - fedora-next
+  - fedora-next-updates
+
+packages:
+  - acl
+  - attr
+  - bash-completion
+  - coreos-installer
+  - coreutils
+  - intel-gpu-firmware
+  - jq
+  - kbd
+  - less
+  - lsof
+  - ncurses
+  - passwd
+  - qemu-guest-agent
+  - rsync
+  - shadow-utils
+  - selinux-policy-targeted
+  - systemd-resolved
+  - sudo
+  - vim-minimal
+  - zram-generator
+  
+  - bsdtar
+  - bzip2
+  - gzip
+  - tar
+  - xz
+  - zstd
+
+  - openssh-clients
+  - openssh-server
