@@ -1,10 +1,12 @@
 
 
-releasever: 1
+releasever: 37
 
 ref: fedora/${releasever}/coreos
 
 include: fedora-coreos-config/manifests/ignition-and-ostree.yaml
+
+automatic-version-prefix: "${releasever}.<date:%Y%m%d>.dev"
 
 install-langs:
   - en_GB
