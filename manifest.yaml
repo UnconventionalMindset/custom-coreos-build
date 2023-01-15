@@ -1,12 +1,22 @@
-
+variables:
+  stream: next
+  prod: true
 
 releasever: 37
 
 ref: fedora/${releasever}/coreos
 
-include: fedora-coreos-config/manifests/ignition-and-ostree.yaml
+rojig:
+  license: MIT
+  name: fedora-coreos
+  summary: Fedora CoreOS ${stream}
+
+include:
+  - fedora-coreos-config/manifests/ignition-and-ostree.yaml
+  - fedora-coreos-config/manifests/disable-zincati.yaml
 
 automatic-version-prefix: "${releasever}.<date:%Y%m%d>.dev"
+mutate-os-release: "${releasever}"
 
 install-langs:
   - en_GB
