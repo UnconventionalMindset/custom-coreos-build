@@ -11,8 +11,11 @@ rojig:
   name: fedora-coreos
   summary: Fedora CoreOS ${stream}
 
+add-commit-metadata:
+  fedora-coreos.stream: ${stream}
+
 include:
-  - fedora-coreos-config/manifests/ignition-and-ostree.yaml
+  - fedora-coreos-config/manifests/fedora-coreos-base.yaml
   - fedora-coreos-config/manifests/disable-zincati.yaml
 
 automatic-version-prefix: "${releasever}.<date:%Y%m%d>.dev"
