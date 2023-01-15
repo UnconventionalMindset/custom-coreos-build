@@ -47,3 +47,6 @@ packages:
 
   - openssh-clients
   - openssh-server
+
+  - docker-compose
+  - podman-compose
