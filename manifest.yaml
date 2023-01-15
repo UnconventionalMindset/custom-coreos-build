@@ -28,6 +28,10 @@ install-langs:
 repos:
   - fedora-next
   - fedora-next-updates
+  
+etc-group-members:
+  # Add the docker group to /etc/group
+  - docker
 
 packages:
   - acl
