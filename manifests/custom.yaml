@@ -1,0 +1,96 @@
+variables:
+  stream: next
+  prod: true
+
+releasever: 37
+
+ref: fedora/${releasever}/coreos
+
+rojig:
+  license: MIT
+  name: fedora-coreos
+  summary: Fedora CoreOS ${stream}
+
+add-commit-metadata:
+  fedora-coreos.stream: ${stream}
+
+include:
+  - fedora-coreos-base-custom.yaml
+  - ../fedora-coreos-config/manifests/disable-zincati.yaml
+
+automatic-version-prefix: "${releasever}.<date:%Y%m%d>.dev"
+mutate-os-release: "${releasever}"
+
+install-langs:
+  - en_GB
+  - en_US
+
+repos:
+  - fedora-next
+  - fedora-next-updates
+
+etc-group-members:
+  # Add the following groups to /etc/group
+  - docker
+  - dialout
+  - video
+  - render
+
+packages:
+  # From fedora-coreos.yaml
+  - fedora-release-coreos
+  - fedora-repos-ostree
+  # fedora-repos-modular was converted into its own subpackage in f33
+  # Continue to include it in case users want to use it.
+  - fedora-repos-modular
+  # the archive repo for more reliable package layering
+  # https://github.com/coreos/fedora-coreos-tracker/issues/400
+  - fedora-repos-archive
+  # Moby engine contains Docker.
+  - moby-engine
+  # Already pulled in by moby-engine, but let's be explicit. Typhoon uses it.
+  - containerd
+  # Updates
+  - zincati
+  # Include and set the default editor
+  - nano nano-default-editor
+
+  - acl
+  - attr
+  - bash-completion
+  - coreos-installer
+  - coreutils
+  - intel-gpu-firmware
+  - jq
+  - kbd
+  - less
+  - lsof
+  - ncurses
+  - passwd
+  - qemu-guest-agent
+  - rsync
+  - shadow-utils
+  - selinux-policy-targeted
+  - systemd-resolved
+  - sudo
+  - vim-minimal
+  - zram-generator
+  
+  - bsdtar
+  - bzip2
+  - gzip
+  - tar
+  - xz
+  - zstd
+
+  - openssh-clients
+  - openssh-server
+
+  - docker-compose
+  - podman-compose
+
+packages-x86_64:
+  - grub2 grub2-efi-x64 efibootmgr shim
+  - microcode_ctl
+  # firmware updates
+  - fwupd
