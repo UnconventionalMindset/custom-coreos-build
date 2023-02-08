@@ -88,6 +88,12 @@ packages:
 
   - docker-compose
   - podman-compose
+  
+  # Kubernetes
+  - kubelet
+  - kubeadm
+  - kubectl
+  - cri-o
 
 packages-x86_64:
   - grub2 grub2-efi-x64 efibootmgr shim
