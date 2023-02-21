@@ -2,7 +2,7 @@ variables:
   stream: next
   prod: true
 
-releasever: 37
+releasever: 38
 
 ref: fedora/${releasever}/coreos
 
