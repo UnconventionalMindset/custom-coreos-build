@@ -28,6 +28,7 @@ install-langs:
 repos:
   - fedora-next
   - fedora-next-updates
+  - kubernetes
 
 etc-group-members:
   # Add the following groups to /etc/group
