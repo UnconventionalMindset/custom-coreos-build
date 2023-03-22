@@ -27,7 +27,7 @@ podman run --env COSA_NO_KVM=1 --rm -ti --security-opt label=disable --privilege
     ${COREOS_ASSEMBLER_CONFIG_GIT:+-v $COREOS_ASSEMBLER_CONFIG_GIT:/srv/src/config/:ro}   \
     ${COREOS_ASSEMBLER_GIT:+-v $COREOS_ASSEMBLER_GIT/src/:/usr/lib/coreos-assembler/:ro}  \
     ${COREOS_ASSEMBLER_CONTAINER_RUNTIME_ARGS}                                            \
-    ${COREOS_ASSEMBLER_CONTAINER:-$COREOS_ASSEMBLER_CONTAINER_LATEST} "\$@"
+    ${COREOS_ASSEMBLER_CONTAINER:-$COREOS_ASSEMBLER_CONTAINER_LATEST} "$@"
 
 rc=$?; set +x; exit $rc
 ```
