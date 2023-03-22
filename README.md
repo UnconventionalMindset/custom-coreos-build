@@ -61,5 +61,5 @@ cosa fetch && cosa build && cosa buildextend-metal && cosa buildextend-metal4k &
 
 ## Update repo submodule
 ```
-git submodule update –remote
+git submodule update --remote fedora-coreos-config
 ```
