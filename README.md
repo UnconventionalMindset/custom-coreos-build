@@ -2,7 +2,7 @@
 
 ## Build
 
-Create a script to execute COSA in your home dir named cosa.sh:
+Create a script to execute COSA in your home dir named cosa.sh and make it executable:
 ```
 #!/bin/bash
 env | grep COREOS_ASSEMBLER
