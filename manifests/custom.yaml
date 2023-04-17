@@ -96,9 +96,11 @@ packages:
   - kubectl
   - cri-o
   
-  # Ansible
+  # Ansible-k8s
   - python3
   - python3-libs
+  - python3-pyyaml
+  - python3-jsonpatch
 
 packages-x86_64:
   - grub2 grub2-efi-x64 efibootmgr shim
